@@ -1,5 +1,5 @@
 FROM python:3.11-slim
-ENV TOKEN='6669607060:AAFeERcmEj8FbuNNvBb43om6VJaAWA3bUNA'
+ENV TOKEN='your telegram bot token'
 COPY . .
 RUN pip install -r requirements.txt
 ENTRYPOINT [ "python", "bot.py" ]
