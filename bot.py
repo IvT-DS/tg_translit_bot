@@ -50,8 +50,6 @@ async def proccess_command_start(message: Message):
     time = message.date
     text_for_user = f'Привет {user_name}. Добро пожаловать в сервис транслитерации кириллицы в латиницу в соответствии с Приказом МИД России от 12.02.2020 № 2113. Отправьте текст на кириллице для получения результата.'
     logging.info(f'Пользователь {user_name} {user_id} {time} запустил бота')
-    log = f'Пользователь {user_name} {user_id} {time} запустил бота'
-    os.system(f'{log} >> logs.txt')
 
     await bot.send_message(chat_id=user_id, text=text_for_user)
 
