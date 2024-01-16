@@ -6,17 +6,18 @@ from aiogram import Bot, Dispatcher
 from aiogram.types import Message               # ловим все обновления этого типа 
 from aiogram.filters.command import Command     # обрабатываем команды /start, /help и другие
 
-# 2. Создаем функцию транслитерации текста
-def transliterate_text(text: str):
-    russian_to_latin = {
+russian_to_latin = {
     "А": "A", "Б": "B", "В": "V", "Г": "G", "Д": "D", "Е": "E", "Ё": "E", "Ж": "ZH",
     "З": "Z", "И": "I", "Й": "I", "К": "K", "Л": "L", "М": "M", "Н": "N", "О": "O",
     "П": "P", "Р": "R", "С": "S", "Т": "T", "У": "U", "Ф": "F", "Х": "KH", "Ц": "TS",
     "Ч": "CH", "Ш": "SH", "Щ": "SHCH", "Ы": "Y", "Ъ": "IE", "Э": "E", "Ю": "IU", "Я": "IA"
 }
 
-    cyrillic_letters = set("АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ")
+cyrillic_letters = set("АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ")
 
+# 2. Создаем функцию транслитерации текста
+def transliterate_text(text: str):
+    
     translit_text = ''
 
     for i in text.upper():
